@@ -6,36 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/tv_app_home"
-        style="@style/AppTextTitle"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container_home"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="지석님, 이런 상품\n어때요?"
-        app:layout_constraintEnd_toStartOf="@id/iv_app_logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_app_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/description_home_app_logo"
-        android:src="@drawable/img_logo_home"
-        app:layout_constraintBottom_toBottomOf="@id/tv_app_home"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_app_home" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:itemActiveIndicatorStyle="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:itemActiveIndicatorStyle="@null"
         app:menu="@menu/home_navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
