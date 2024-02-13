@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ShoppingApp</string>
     <string name="description_home_app_logo">홈 화면 로고 이미지</string>
+    <string name="label_category">카테고리</string>
+    <string name="label_home">홈</string>
+    <string name="label_cart">장바구니</string>
 </resources>
