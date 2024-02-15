@@ -1,13 +1,20 @@
 package com.stopstone.shoppingapp
 
-import android.content.Context
+import android.content.res.AssetManager
 import java.io.BufferedReader
+import java.io.IOException
 
-class AssetLoader {
-    fun loadAsset(context: Context, fileName: String): String {
-        val assetManager = context.assets
-        val inputStream = assetManager.open(fileName)
-        val bufferedReader = BufferedReader(inputStream.reader())
-        return bufferedReader.readText()
+class AssetLoader(private val assetManager: AssetManager) {
+    fun loadAsset(fileName: String): String? {
+        return kotlin.runCatching {
+            try {
+                val inputStream = assetManager.open(fileName)
+                BufferedReader(inputStream.reader()).use {
+                    it.readText()
+                }
+            } catch (e: IOException) {
+                null
+            }
+        }.getOrNull()
     }
 }

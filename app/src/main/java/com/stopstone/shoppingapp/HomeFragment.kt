@@ -12,6 +12,12 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var assetLoader: AssetLoader
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        assetLoader = AssetLoader(requireContext().assets)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,8 +32,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setLayout()
 
-        val assetLoader = AssetLoader()
-        val result = assetLoader.loadAsset(requireContext(), "home.json")
+        val result = assetLoader.loadAsset("home.json")
         Log.d("HomeFragment", "result: $result")
     }
 
