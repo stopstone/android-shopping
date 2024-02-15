@@ -25,6 +25,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setLayout()
+
+        val assetLoader = AssetLoader()
+        val result = assetLoader.loadAsset(requireContext(), "home.json")
+        Log.d("HomeFragment", "result: $result")
     }
 
     private fun setLayout() {
