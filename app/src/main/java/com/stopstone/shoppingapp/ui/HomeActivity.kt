@@ -1,10 +1,11 @@
-package com.stopstone.shoppingapp
+package com.stopstone.shoppingapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.stopstone.shoppingapp.R
 import com.stopstone.shoppingapp.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

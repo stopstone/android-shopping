@@ -1,4 +1,4 @@
-package com.stopstone.shoppingapp
+package com.stopstone.shoppingapp.data.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

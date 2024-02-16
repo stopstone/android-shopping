@@ -1,14 +1,14 @@
-package com.stopstone.shoppingapp
+package com.stopstone.shoppingapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.stopstone.shoppingapp.databinding.FragmentCategoryBinding
+import com.stopstone.shoppingapp.databinding.FragmentCartBinding
 
-class CategoryFragment : Fragment() {
-    private var _binding: FragmentCategoryBinding? = null
+class CartFragment : Fragment() {
+    private var _binding: FragmentCartBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class CategoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCategoryBinding.inflate(inflater, container, false)
+        _binding = FragmentCartBinding.inflate(inflater, container, false)
         return binding.root
     }
 

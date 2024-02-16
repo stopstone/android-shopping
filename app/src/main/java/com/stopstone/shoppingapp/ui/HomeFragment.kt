@@ -1,4 +1,4 @@
-package com.stopstone.shoppingapp
+package com.stopstone.shoppingapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.squareup.moshi.Moshi
+import com.stopstone.shoppingapp.data.AssetLoader
+import com.stopstone.shoppingapp.data.model.BannersJsonData
+import com.stopstone.shoppingapp.R
+import com.stopstone.shoppingapp.data.HomeRepository
 import com.stopstone.shoppingapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -15,6 +19,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var assetLoader: AssetLoader
     private val bannerAdapter = HomeBannerAdapter()
+    private val repository : HomeRepository by lazy { HomeRepository(assetLoader) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,13 +43,8 @@ class HomeFragment : Fragment() {
 
     private fun setLayout() {
         setBanners()
-        val result = assetLoader.loadAsset("home.json")
-        if (!result.isNullOrEmpty()) {
-            val moshi = Moshi.Builder().build()
-            val jsonAdapter = moshi.adapter(BannersJsonData::class.java)
-            jsonAdapter.fromJson(result)?.let {
-                bannerAdapter.add(it.banners)
-            }
+        repository.getBannerJsonData()?.let {
+            bannerAdapter.add(it.banners)
         }
     }
 
@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
             TabLayoutMediator(
                 binding.viewpagerHomeBannerIndicator,
                 this
-            ) { tab, position -> }.attach()
+            ) { _, _ -> }.attach()
 
         }
     }

@@ -1,4 +1,4 @@
-package com.stopstone.shoppingapp
+package com.stopstone.shoppingapp.data
 
 import android.content.res.AssetManager
 import java.io.BufferedReader

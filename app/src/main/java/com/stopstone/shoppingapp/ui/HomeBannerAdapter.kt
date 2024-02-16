@@ -1,9 +1,10 @@
-package com.stopstone.shoppingapp
+package com.stopstone.shoppingapp.ui
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.stopstone.shoppingapp.data.model.Banner
 import com.stopstone.shoppingapp.databinding.ItemHomeBannerBinding
 
 class HomeBannerAdapter : RecyclerView.Adapter<HomeBannerAdapter.HomeBannerViewHolder>() {
