@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.tabs.TabLayoutMediator
 import com.squareup.moshi.Moshi
 import com.stopstone.shoppingapp.databinding.FragmentHomeBinding
 
@@ -60,6 +61,12 @@ class HomeFragment : Fragment() {
                 page.translationX = position * -offset
             }
             offscreenPageLimit = 2
+
+            TabLayoutMediator(
+                binding.viewpagerHomeBannerIndicator,
+                this
+            ) { tab, position -> }.attach()
+
         }
     }
 
