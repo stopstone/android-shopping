@@ -1,7 +1,6 @@
 package com.stopstone.shoppingapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,17 +31,20 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setLayout()
+    }
+
+    private fun setLayout() {
+        val adapter = HomeBannerAdapter()
+        binding.viewpagerHomeBanner.adapter = adapter
 
         val result = assetLoader.loadAsset("home.json")
         if (!result.isNullOrEmpty()) {
             val moshi = Moshi.Builder().build()
             val jsonAdapter = moshi.adapter(BannersJsonData::class.java)
-            val bannersJsonData = jsonAdapter.fromJson(result)
+            jsonAdapter.fromJson(result)?.let {
+                adapter.add(it.banners)
+            }
         }
-    }
-
-    private fun setLayout() {
-        binding.viewpagerHomeBanner.adapter
     }
 
     override fun onDestroyView() {
