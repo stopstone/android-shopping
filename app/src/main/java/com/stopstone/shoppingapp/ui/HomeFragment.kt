@@ -19,7 +19,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var assetLoader: AssetLoader
     private val bannerAdapter = HomeBannerAdapter()
-    private val repository : HomeRepository by lazy { HomeRepository(assetLoader) }
+    private val repository: HomeRepository by lazy { HomeRepository(assetLoader) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,9 +43,7 @@ class HomeFragment : Fragment() {
 
     private fun setLayout() {
         setBanners()
-        repository.getBannerJsonData()?.let {
-            bannerAdapter.add(it.banners)
-        }
+        loadData()
     }
 
     private fun setBanners() {
@@ -67,6 +65,13 @@ class HomeFragment : Fragment() {
                 this
             ) { _, _ -> }.attach()
 
+        }
+    }
+
+
+    private fun loadData() {
+        repository.getBannerJsonData()?.let {
+            bannerAdapter.submitList(it.banners)
         }
     }
 

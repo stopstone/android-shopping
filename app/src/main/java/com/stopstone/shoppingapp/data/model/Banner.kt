@@ -5,6 +5,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Banner(
+    val id: String, 
     @Json(name = "background_image_url") val backgroundImageUrl: String,
     val badge: Badge,
     @Json(name = "head_line") val headLine: String,
@@ -13,8 +14,7 @@ data class Banner(
 
 @JsonClass(generateAdapter = true)
 data class Badge(
-    val label: String,
-    @Json(name = "background_color") val backgroundColor: String
+    val label: String, @Json(name = "background_color") val backgroundColor: String
 )
 
 @JsonClass(generateAdapter = true)

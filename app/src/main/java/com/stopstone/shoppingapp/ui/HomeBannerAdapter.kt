@@ -1,31 +1,22 @@
 package com.stopstone.shoppingapp.ui
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.stopstone.shoppingapp.data.model.Banner
 import com.stopstone.shoppingapp.databinding.ItemHomeBannerBinding
 
-class HomeBannerAdapter : RecyclerView.Adapter<HomeBannerAdapter.HomeBannerViewHolder>() {
+class HomeBannerAdapter :
+    ListAdapter<Banner, HomeBannerAdapter.HomeBannerViewHolder>(BannerDiffCallBack()) {
 
-    private val banners = mutableListOf<Banner>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeBannerViewHolder {
         return HomeBannerViewHolder.from(parent)
     }
 
-    override fun getItemCount(): Int {
-        return banners.size
-    }
-
     override fun onBindViewHolder(holder: HomeBannerViewHolder, position: Int) {
-        holder.bind(banners[position])
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun add(items: List<Banner>) {
-        banners.addAll(items)
-        notifyDataSetChanged()
+        holder.bind(getItem(position))
     }
 
     class HomeBannerViewHolder private constructor(private val binding: ItemHomeBannerBinding) :
@@ -52,6 +43,16 @@ class HomeBannerAdapter : RecyclerView.Adapter<HomeBannerAdapter.HomeBannerViewH
                 return HomeBannerViewHolder(binding)
             }
         }
-
     }
+}
+
+class BannerDiffCallBack : DiffUtil.ItemCallback<Banner>() {
+    override fun areItemsTheSame(oldItem: Banner, newItem: Banner): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Banner, newItem: Banner): Boolean {
+        return oldItem == newItem
+    }
+
 }

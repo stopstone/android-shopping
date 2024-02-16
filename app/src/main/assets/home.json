@@ -1,6 +1,7 @@
 {
   "banners": [
     {
+      "id": "",
       "background_image_url": "https://",
       "badge": {
         "label": "기획전",
@@ -17,6 +18,7 @@
       }
     },
     {
+      "id": "",
       "background_image_url": "https://",
       "badge": {
         "label": "기획전",
