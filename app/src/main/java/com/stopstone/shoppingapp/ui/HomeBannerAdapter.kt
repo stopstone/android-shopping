@@ -1,5 +1,6 @@
 package com.stopstone.shoppingapp.ui
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -25,6 +26,7 @@ class HomeBannerAdapter :
             val product = banner.product
             with(binding) {
                 tvBannerBadge.text = banner.badge.label
+                tvBannerBadge.setBackgroundColor(Color.parseColor(banner.badge.backgroundColor))
                 tvBannerTitle.text = banner.headLine
                 tvBannerProductDetailBrandName.text = product.brandName
                 tvBannerProductDetailLabel.text = product.itemName

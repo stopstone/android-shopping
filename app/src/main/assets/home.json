@@ -1,16 +1,16 @@
 {
   "banners": [
     {
-      "id": "",
-      "background_image_url": "https://",
+      "id": "banner-01",
+      "background_image_url": "https:////github.com/stopstone/kotlin-menu/assets/77120604/fb8c68a7-8b64-4abd-b7ee-ee98cd2a1418",
       "badge": {
         "label": "기획전",
-        "background_color": ""
+        "background_color": "#51524d"
       },
       "head_line": "따스한 겨울\n준비하기",
       "product": {
         "id": "FW-twg-sweater-01",
-        "thumbnail_image_url": "https://",
+        "thumbnail_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/c543c468-10d5-4e73-9222-572a3681f95b",
         "brand_name": "twg.official",
         "item_name": "캐시미어 100% 터틀넥 스웨터",
         "discount_rate": 9,
@@ -18,16 +18,16 @@
       }
     },
     {
-      "id": "",
-      "background_image_url": "https://",
+      "id": "banner-02",
+      "background_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/e59b340e-4c34-4747-8790-4d1a8b579769",
       "badge": {
         "label": "기획전",
-        "background_color": ""
+        "background_color": "#967a6d"
       },
       "head_line": "나만의\n홈 오피스",
       "product": {
         "id": "desk-01",
-        "thumbnail_image_url": "https://",
+        "thumbnail_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/15818df9-28e8-4033-8102-5a23a1d6688a",
         "brand_name": "Desk",
         "item_name": "슬림 데스크 800",
         "discount_rate": 16,
