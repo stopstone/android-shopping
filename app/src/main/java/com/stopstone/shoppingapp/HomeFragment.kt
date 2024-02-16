@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.squareup.moshi.Moshi
 import com.stopstone.shoppingapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -33,7 +34,11 @@ class HomeFragment : Fragment() {
         setLayout()
 
         val result = assetLoader.loadAsset("home.json")
-        Log.d("HomeFragment", "result: $result")
+        if (!result.isNullOrEmpty()) {
+            val moshi = Moshi.Builder().build()
+            val jsonAdapter = moshi.adapter(BannersJsonData::class.java)
+            val bannersJsonData = jsonAdapter.fromJson(result)
+        }
     }
 
     private fun setLayout() {
