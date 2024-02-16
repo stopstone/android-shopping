@@ -5,20 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
-import com.squareup.moshi.Moshi
-import com.stopstone.shoppingapp.data.AssetLoader
-import com.stopstone.shoppingapp.data.model.BannersJsonData
 import com.stopstone.shoppingapp.R
+import com.stopstone.shoppingapp.data.AssetLoader
 import com.stopstone.shoppingapp.data.HomeRepository
 import com.stopstone.shoppingapp.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), ProductClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var assetLoader: AssetLoader
-    private val bannerAdapter = HomeBannerAdapter()
+    private val bannerAdapter = HomeBannerAdapter(this)
     private val repository: HomeRepository by lazy { HomeRepository(assetLoader) }
 
 
@@ -78,5 +77,10 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onProductClick() {
+        val action = HomeFragmentDirections.actionNavigationToProductDetail()
+        findNavController().navigate(action)
     }
 }

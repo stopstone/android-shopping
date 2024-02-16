@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.stopstone.shoppingapp.data.model.Banner
 import com.stopstone.shoppingapp.databinding.ItemHomeBannerBinding
 
-class HomeBannerAdapter :
+class HomeBannerAdapter(private val clickListener: ProductClickListener) :
     ListAdapter<Banner, HomeBannerAdapter.HomeBannerViewHolder>(BannerDiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeBannerViewHolder {
@@ -17,12 +17,15 @@ class HomeBannerAdapter :
     }
 
     override fun onBindViewHolder(holder: HomeBannerViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), clickListener)
     }
 
     class HomeBannerViewHolder private constructor(private val binding: ItemHomeBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(banner: Banner) {
+        fun bind(banner: Banner, clickListener: ProductClickListener) {
+            itemView.setOnClickListener {
+                clickListener.onProductClick()
+            }
             val product = banner.product
             with(binding) {
                 tvBannerBadge.text = banner.badge.label
