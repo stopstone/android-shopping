@@ -23,7 +23,7 @@ class HomeBannerAdapter(private val clickListener: ProductClickListener) :
     class HomeBannerViewHolder private constructor(private val binding: ItemHomeBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(banner: Banner, clickListener: ProductClickListener) {
-            val product = banner.product
+            val product = banner.productDetail
             itemView.setOnClickListener {
                 clickListener.onProductClick(product.id)
             }

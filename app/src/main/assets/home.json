@@ -8,7 +8,7 @@
         "background_color": "#51524d"
       },
       "head_line": "따스한 겨울\n준비하기",
-      "product": {
+      "product_detail": {
         "id": "FW-twg-sweater-01",
         "thumbnail_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/c543c468-10d5-4e73-9222-572a3681f95b",
         "brand_name": "twg.official",
@@ -25,7 +25,7 @@
         "background_color": "#967a6d"
       },
       "head_line": "나만의\n홈 오피스",
-      "product": {
+      "product_detail": {
         "id": "desk-01",
         "thumbnail_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/15818df9-28e8-4033-8102-5a23a1d6688a",
         "brand_name": "Desk",
