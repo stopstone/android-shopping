@@ -17,8 +17,8 @@ class HomeFragment : Fragment(), ProductClickListener {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var assetLoader: AssetLoader
-    private val bannerAdapter = HomeBannerAdapter(this)
     private val repository: HomeRepository by lazy { HomeRepository(assetLoader) }
+    private val bannerAdapter = HomeBannerAdapter(this)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,8 +79,8 @@ class HomeFragment : Fragment(), ProductClickListener {
         _binding = null
     }
 
-    override fun onProductClick() {
-        val action = HomeFragmentDirections.actionNavigationToProductDetail()
+    override fun onProductClick(productId: String) {
+        val action = HomeFragmentDirections.actionNavigationToProductDetail(productId)
         findNavController().navigate(action)
     }
 }

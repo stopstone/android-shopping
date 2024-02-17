@@ -23,10 +23,10 @@ class HomeBannerAdapter(private val clickListener: ProductClickListener) :
     class HomeBannerViewHolder private constructor(private val binding: ItemHomeBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(banner: Banner, clickListener: ProductClickListener) {
-            itemView.setOnClickListener {
-                clickListener.onProductClick()
-            }
             val product = banner.product
+            itemView.setOnClickListener {
+                clickListener.onProductClick(product.id)
+            }
             with(binding) {
                 tvBannerBadge.text = banner.badge.label
                 tvBannerBadge.setBackgroundColor(Color.parseColor(banner.badge.backgroundColor))
