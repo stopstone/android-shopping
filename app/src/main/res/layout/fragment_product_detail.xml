@@ -72,7 +72,7 @@
         tools:text="4.5" />
 
     <TextView
-        android:id="@+id/iv_product_detail_label"
+        android:id="@+id/tv_product_detail_label"
         style="@style/AppTextTitle.S18"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="@id/iv_product_representative_image"
-        app:layout_constraintTop_toBottomOf="@id/iv_product_detail_label"
+        app:layout_constraintTop_toBottomOf="@id/tv_product_detail_label"
         tools:text="9%" />
 
     <TextView
