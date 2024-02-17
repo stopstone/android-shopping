@@ -1,15 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_product_detail"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="detail"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_product_representative_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/brown"
+        app:layout_constraintDimensionRatio="w, 1:1"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_product_detail"
+        app:shapeAppearanceOverlay="@style/AppRoundedImage" />
+
+    <TextView
+        android:id="@+id/tv_product_detail_brand_name"
+        style="@style/AppTextCaption.S13.Grey03.Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@id/iv_product_representative_image"
+        app:layout_constraintTop_toBottomOf="@id/iv_product_representative_image"
+        tools:text="twg.official" />
+
+    <ImageView
+        android:id="@+id/iv_product_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:src="@drawable/ic_star_on"
+        app:layout_constraintBottom_toBottomOf="@id/tv_product_detail_brand_name"
+        app:layout_constraintEnd_toStartOf="@id/tv_product_rating"
+        app:layout_constraintTop_toTopOf="@id/tv_product_detail_brand_name"
+        android:contentDescription="@string/description_product_rating" />
+
+    <TextView
+        android:id="@+id/tv_product_rating"
+        style="@style/AppTextCaption.Grey03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_product_detail_brand_name"
+        app:layout_constraintEnd_toEndOf="@id/iv_product_representative_image"
+        app:layout_constraintTop_toTopOf="@id/tv_product_detail_brand_name"
+        tools:text="4.5" />
+
+    <TextView
+        android:id="@+id/iv_product_detail_label"
+        style="@style/AppTextTitle.S18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_product_representative_image"
+        app:layout_constraintStart_toStartOf="@id/iv_product_representative_image"
+        app:layout_constraintTop_toBottomOf="@id/tv_product_detail_brand_name"
+        tools:text="[19차 리오더] 페이크 레더 숏 테일러 자켓 블랙(1 color)" />
+
+    <TextView
+        android:id="@+id/tv_product_detail_discount_rate"
+        style="@style/AppTextSubTitle.S18.Purple.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/iv_product_representative_image"
+        app:layout_constraintTop_toBottomOf="@id/iv_product_detail_label"
+        tools:text="9%" />
+
+    <TextView
+        android:id="@+id/tv_product_detail_discount_price"
+        style="@style/AppTextTitle.S18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_product_detail_discount_rate"
+        app:layout_constraintStart_toEndOf="@id/tv_product_detail_discount_rate"
+        tools:text="89,000원" />
+
+    <TextView
+        android:id="@+id/tv_product_detail_price"
+        style="@style/AppTextCaption.S14.Grey05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_product_detail_discount_rate"
+        app:layout_constraintStart_toEndOf="@id/tv_product_detail_discount_price"
+        tools:text="102,000원" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

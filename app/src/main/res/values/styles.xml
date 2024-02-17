@@ -16,6 +16,23 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="AppTextTitle.S18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTextSubTitle.S18">
+        <item name="android:textColor">@color/black_01</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTextSubTitle.S18.Purple">
+        <item name="android:textColor">@color/purple</item>
+    </style>
+
+    <style name="AppTextSubTitle.S18.Purple.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="AppTextSubTitle">
         <item name="android:textColor">@color/black_01</item>
         <item name="android:textSize">16sp</item>
@@ -46,6 +63,26 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="AppTextCaption.S13">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="AppTextCaption.S13.Grey03">
+        <item name="android:textColor">@color/grey_03</item>
+    </style>
+
+    <style name="AppTextCaption.S13.Grey03.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTextCaption.S14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTextCaption.Grey03">
+        <item name="android:textColor">@color/grey_03</item>
+    </style>
+
     <style name="AppTextCaption.White">
         <item name="android:textColor">@color/white</item>
     </style>
@@ -56,6 +93,10 @@
 
     <style name="AppTextCaption.Grey01">
         <item name="android:textColor">@color/grey_01</item>
+    </style>
+
+    <style name="AppTextCaption.S14.Grey05">
+        <item name="android:textColor">@color/grey_05</item>
     </style>
 
     <style name="AppRoundedImage">
