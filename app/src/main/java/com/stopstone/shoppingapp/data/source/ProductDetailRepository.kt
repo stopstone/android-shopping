@@ -3,6 +3,7 @@ package com.stopstone.shoppingapp.data.source
 import com.squareup.moshi.Moshi
 import com.stopstone.shoppingapp.data.model.Product
 import com.stopstone.shoppingapp.data.model.ProductDetailResponse
+import com.stopstone.shoppingapp.data.source.asset.AssetLoader
 
 class ProductDetailRepository(private val assetLoader: AssetLoader) {
     fun getProduct(id: String): Product? {

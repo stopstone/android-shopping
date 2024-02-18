@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.stopstone.shoppingapp.R
-import com.stopstone.shoppingapp.data.source.AssetLoader
+import com.stopstone.shoppingapp.data.source.asset.AssetLoader
 import com.stopstone.shoppingapp.data.source.HomeRepository
 import com.stopstone.shoppingapp.databinding.FragmentHomeBinding
 import com.stopstone.shoppingapp.ui.ProductClickListener
