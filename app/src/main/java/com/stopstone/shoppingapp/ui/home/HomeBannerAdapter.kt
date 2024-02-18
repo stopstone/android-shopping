@@ -1,4 +1,4 @@
-package com.stopstone.shoppingapp.ui
+package com.stopstone.shoppingapp.ui.home
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.stopstone.shoppingapp.R
 import com.stopstone.shoppingapp.data.model.Banner
 import com.stopstone.shoppingapp.databinding.ItemHomeBannerBinding
+import com.stopstone.shoppingapp.ui.ProductClickListener
 import com.stopstone.shoppingapp.ui.extension.applyNumberFormat
 import com.stopstone.shoppingapp.ui.extension.applyNumberStrikeStyleFormat
 

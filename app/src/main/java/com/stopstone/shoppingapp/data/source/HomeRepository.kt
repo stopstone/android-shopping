@@ -1,4 +1,4 @@
-package com.stopstone.shoppingapp.data
+package com.stopstone.shoppingapp.data.source
 
 import com.squareup.moshi.Moshi
 import com.stopstone.shoppingapp.data.model.HomeResponse

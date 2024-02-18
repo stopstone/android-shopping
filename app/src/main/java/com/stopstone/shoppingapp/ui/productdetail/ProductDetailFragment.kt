@@ -1,4 +1,4 @@
-package com.stopstone.shoppingapp.ui
+package com.stopstone.shoppingapp.ui.productdetail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.stopstone.shoppingapp.R
-import com.stopstone.shoppingapp.data.AssetLoader
-import com.stopstone.shoppingapp.data.ProductDetailRepository
+import com.stopstone.shoppingapp.data.source.AssetLoader
+import com.stopstone.shoppingapp.data.source.ProductDetailRepository
 import com.stopstone.shoppingapp.databinding.FragmentProductDetailBinding
 import com.stopstone.shoppingapp.ui.extension.applyNumberFormat
 import com.stopstone.shoppingapp.ui.extension.applyNumberStrikeStyleFormat

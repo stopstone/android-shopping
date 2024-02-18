@@ -1,4 +1,4 @@
-package com.stopstone.shoppingapp.ui
+package com.stopstone.shoppingapp.ui.cart
 
 import android.os.Bundle
 import android.view.LayoutInflater

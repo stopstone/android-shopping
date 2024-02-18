@@ -1,4 +1,4 @@
-package com.stopstone.shoppingapp.ui
+package com.stopstone.shoppingapp.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.stopstone.shoppingapp.R
-import com.stopstone.shoppingapp.data.AssetLoader
-import com.stopstone.shoppingapp.data.HomeRepository
+import com.stopstone.shoppingapp.data.source.AssetLoader
+import com.stopstone.shoppingapp.data.source.HomeRepository
 import com.stopstone.shoppingapp.databinding.FragmentHomeBinding
+import com.stopstone.shoppingapp.ui.ProductClickListener
 
 class HomeFragment : Fragment(), ProductClickListener {
 
