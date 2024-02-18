@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "902716438228",
+    "project_id": "shoppingapp-40cb3",
+    "storage_bucket": "shoppingapp-40cb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902716438228:android:a18c7f0b42b278c497ed41",
+        "android_client_info": {
+          "package_name": "com.stopstone.shoppingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYwnL2cqRhcb7yh9zABlzHQxSt3C8pmLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
