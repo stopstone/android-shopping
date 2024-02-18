@@ -1,17 +1,10 @@
 package com.stopstone.shoppingapp.data.source
 
-import com.squareup.moshi.Moshi
 import com.stopstone.shoppingapp.data.model.Product
-import com.stopstone.shoppingapp.data.model.ProductDetailResponse
-import com.stopstone.shoppingapp.data.source.asset.AssetLoader
+import com.stopstone.shoppingapp.data.source.remote.ShoppingService
 
-class ProductDetailRepository(private val assetLoader: AssetLoader) {
-    fun getProduct(id: String): Product? {
-        val result = assetLoader.loadAsset("products.json")
-        if (result.isNullOrEmpty()) return null
-
-        val moshi = Moshi.Builder().build()
-        val jsonAdapter = moshi.adapter(ProductDetailResponse::class.java)
-        return jsonAdapter.fromJson(result)?.products?.get(id)
+class ProductDetailRepository(private val shoppingService: ShoppingService) {
+    suspend fun getProduct(id: String): Product {
+        return shoppingService.getProduct(id)
     }
 }
