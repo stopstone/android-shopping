@@ -12,4 +12,6 @@
 
     <!--  Product Detail  -->
     <string name="description_product_rating">상품 평균 평점 안내 이미지</string>
+    <string name="label_product_detail_image">상품설명</string>
+    <string name="description_product_detail_image">제품 상세 이미지</string>
 </resources>

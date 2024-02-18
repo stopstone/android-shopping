@@ -12,5 +12,11 @@ data class Product(
     val price: Int,
     val rating: Float,
     @Json(name = "representation_image_url") val representationImageUrl: String,
-    @Json(name = "detail_images") val detailImages: List<String>
+    @Json(name = "detail_images") val detailImages: List<ProductDetailImage>
+)
+
+@JsonClass(generateAdapter = true)
+data class ProductDetailImage(
+    val id: String,
+    @Json(name = "img_url") val imgUrl: String
 )

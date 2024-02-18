@@ -13,6 +13,7 @@ import com.stopstone.shoppingapp.data.source.remote.ShoppingService
 import com.stopstone.shoppingapp.databinding.FragmentProductDetailBinding
 import com.stopstone.shoppingapp.ui.extension.applyNumberFormat
 import com.stopstone.shoppingapp.ui.extension.applyNumberStrikeStyleFormat
+import com.stopstone.shoppingapp.ui.extension.load
 import kotlinx.coroutines.launch
 
 class ProductDetailFragment : Fragment() {
@@ -20,11 +21,8 @@ class ProductDetailFragment : Fragment() {
     private var _binding: FragmentProductDetailBinding? = null
     private val binding get() = _binding!!
     private val args: ProductDetailFragmentArgs by navArgs()
-    private val repository: ProductDetailRepository by lazy {
-        ProductDetailRepository(
-            ShoppingService.create()
-        )
-    }
+    private val repository: ProductDetailRepository by lazy { ProductDetailRepository(ShoppingService.create()) }
+    private val adapter = ProductDetailImageAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,6 +43,7 @@ class ProductDetailFragment : Fragment() {
         lifecycleScope.launch {
             val product = repository.getProduct(productId)
             with(binding) {
+                ivProductRepresentativeImage.load(product.representationImageUrl)
                 tvProductDetailBrandName.text = product.brandName
                 tvProductRating.text = product.rating.toString()
                 tvProductDetailLabel.text = product.itemName
@@ -52,7 +51,8 @@ class ProductDetailFragment : Fragment() {
                     getString(R.string.format_discount_unit, product.discountRate)
                 tvProductDetailDiscountPrice.applyNumberFormat(product.discountPrice)
                 tvProductDetailPrice.applyNumberStrikeStyleFormat(product.price)
-
+                rvProductDetail.adapter = adapter
+                adapter.submitList(product.detailImages)
             }
         }
     }
