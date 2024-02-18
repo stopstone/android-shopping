@@ -11,6 +11,7 @@ import com.stopstone.shoppingapp.data.AssetLoader
 import com.stopstone.shoppingapp.data.ProductDetailRepository
 import com.stopstone.shoppingapp.databinding.FragmentProductDetailBinding
 import com.stopstone.shoppingapp.ui.extension.applyNumberFormat
+import com.stopstone.shoppingapp.ui.extension.applyNumberStrikeStyleFormat
 
 class ProductDetailFragment: Fragment() {
 
@@ -45,7 +46,8 @@ class ProductDetailFragment: Fragment() {
                 tvProductRating.text = product.rating.toString()
                 tvProductDetailLabel.text = product.itemName
                 tvProductDetailDiscountRate.text = getString(R.string.format_discount_unit, product.discountRate)
-                tvProductDetailPrice.applyNumberFormat(product.price)
+                tvProductDetailDiscountPrice.applyNumberFormat(product.discountPrice)
+                tvProductDetailPrice.applyNumberStrikeStyleFormat(product.price)
 
             }
         }

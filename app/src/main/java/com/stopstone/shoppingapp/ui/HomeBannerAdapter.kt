@@ -10,6 +10,7 @@ import com.stopstone.shoppingapp.R
 import com.stopstone.shoppingapp.data.model.Banner
 import com.stopstone.shoppingapp.databinding.ItemHomeBannerBinding
 import com.stopstone.shoppingapp.ui.extension.applyNumberFormat
+import com.stopstone.shoppingapp.ui.extension.applyNumberStrikeStyleFormat
 
 class HomeBannerAdapter(private val clickListener: ProductClickListener) :
     ListAdapter<Banner, HomeBannerAdapter.HomeBannerViewHolder>(BannerDiffCallBack()) {
@@ -36,7 +37,8 @@ class HomeBannerAdapter(private val clickListener: ProductClickListener) :
                 tvBannerProductDetailBrandName.text = product.brandName
                 tvBannerProductDetailLabel.text = product.itemName
                 tvBannerProductDetailDiscountRate.text = itemView.context.getString(R.string.format_discount_unit, product.discountRate)
-                tvBannerProductDetailPrice.applyNumberFormat(product.price)
+                tvBannerProductDetailDiscountPrice.applyNumberFormat(product.discountPrice)
+                tvBannerProductDetailPrice.applyNumberStrikeStyleFormat(product.price)
             }
         }
 

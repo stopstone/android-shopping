@@ -1,22 +1,28 @@
 {
-  "products" : {
+  "products": {
     "FW-twg-sweater-01": {
       "brand_name": "twg.official",
       "item_name": "캐시미어 100% 터틀넥 스웨터",
       "discount_rate": 9,
-      "price": 1020000,
+      "discount_price": 92820,
+      "price": 102000,
       "rating": 4.5,
-      "representation_image_url" : "",
-      "detail_images": [""]
+      "representation_image_url": "",
+      "detail_images": [
+        ""
+      ]
     },
     "desk-01": {
       "brand_name": "Desk",
       "item_name": "슬림 데스크 800",
       "discount_rate": 16,
+      "discount_price": 134400,
       "price": 160000,
       "rating": 4.8,
-      "representation_image_url" : "",
-      "detail_images": [""]
+      "representation_image_url": "",
+      "detail_images": [
+        ""
+      ]
     }
   }
 }
