@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">ShoppingApp</string>
 
+    <string name="format_discount_unit">%d%%</string>
+    <string name="format_price_unit">%s원</string>
+
     <!--  Home  -->
     <string name="description_home_app_logo">홈 화면 로고 이미지</string>
     <string name="label_category">카테고리</string>

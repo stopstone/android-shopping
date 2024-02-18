@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.stopstone.shoppingapp.R
 import com.stopstone.shoppingapp.data.model.Banner
 import com.stopstone.shoppingapp.databinding.ItemHomeBannerBinding
+import com.stopstone.shoppingapp.ui.extension.applyNumberFormat
 
 class HomeBannerAdapter(private val clickListener: ProductClickListener) :
     ListAdapter<Banner, HomeBannerAdapter.HomeBannerViewHolder>(BannerDiffCallBack()) {
@@ -33,8 +35,8 @@ class HomeBannerAdapter(private val clickListener: ProductClickListener) :
                 tvBannerTitle.text = banner.headLine
                 tvBannerProductDetailBrandName.text = product.brandName
                 tvBannerProductDetailLabel.text = product.itemName
-                tvBannerProductDetailDiscountRate.text = product.discountRate.toString()
-                tvBannerProductDetailPrice.text = product.price.toString()
+                tvBannerProductDetailDiscountRate.text = itemView.context.getString(R.string.format_discount_unit, product.discountRate)
+                tvBannerProductDetailPrice.applyNumberFormat(product.price)
             }
         }
 

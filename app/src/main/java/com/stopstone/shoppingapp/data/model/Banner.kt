@@ -23,6 +23,6 @@ data class ProductDetail(
     @Json(name = "brand_name") val brandName: String,
     @Json(name = "item_name") val itemName: String,
     @Json(name = "discount_rate") val discountRate: Int,
-    val price: Long,
+    val price: Int,
     @Json(name = "thumbnail_image_url") val thumbnailImageUrl: String,
 )

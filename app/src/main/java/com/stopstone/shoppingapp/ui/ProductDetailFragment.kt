@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.stopstone.shoppingapp.R
 import com.stopstone.shoppingapp.data.AssetLoader
 import com.stopstone.shoppingapp.data.ProductDetailRepository
 import com.stopstone.shoppingapp.databinding.FragmentProductDetailBinding
+import com.stopstone.shoppingapp.ui.extension.applyNumberFormat
 
 class ProductDetailFragment: Fragment() {
 
@@ -42,8 +44,8 @@ class ProductDetailFragment: Fragment() {
                 tvProductDetailBrandName.text = product.brandName
                 tvProductRating.text = product.rating.toString()
                 tvProductDetailLabel.text = product.itemName
-                tvProductDetailDiscountRate.text = "${product.discountRate}%"
-                tvProductDetailPrice.text = "${product.price}원"
+                tvProductDetailDiscountRate.text = getString(R.string.format_discount_unit, product.discountRate)
+                tvProductDetailPrice.applyNumberFormat(product.price)
 
             }
         }
