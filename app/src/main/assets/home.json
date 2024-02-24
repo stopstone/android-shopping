@@ -1,40 +1,135 @@
 {
-  "banners": [
-    {
-      "id": "banner-01",
-      "background_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/fb8c68a7-8b64-4abd-b7ee-ee98cd2a1418",
-      "badge": {
-        "label": "기획전",
-        "background_color": "#51524d"
+  "home": {
+    "banners": [
+      {
+        "id": "banner-01",
+        "background_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/fb8c68a7-8b64-4abd-b7ee-ee98cd2a1418",
+        "badge": {
+          "label": "기획전",
+          "background_color": "#51524d"
+        },
+        "head_line": "따스한 겨울\n준비하기",
+        "product_detail": {
+          "id": "twg-sweater",
+          "thumbnail_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/c543c468-10d5-4e73-9222-572a3681f95b",
+          "brand_name": "twg.official",
+          "item_name": "캐시미어 100% 터틀넥 스웨터",
+          "discount_rate": 9,
+          "discount_price": 92820,
+          "price": 102000
+        }
       },
-      "head_line": "따스한 겨울\n준비하기",
-      "product_detail": {
-        "id": "twg-sweater",
-        "thumbnail_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/c543c468-10d5-4e73-9222-572a3681f95b",
-        "brand_name": "twg.official",
-        "item_name": "캐시미어 100% 터틀넥 스웨터",
-        "discount_rate": 9,
-        "discount_price": 92820,
-        "price": 102000
+      {
+        "id": "banner-02",
+        "background_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/e59b340e-4c34-4747-8790-4d1a8b579769",
+        "badge": {
+          "label": "기획전",
+          "background_color": "#967a6d"
+        },
+        "head_line": "나만의\n홈 오피스",
+        "product_detail": {
+          "id": "desk-s",
+          "thumbnail_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/15818df9-28e8-4033-8102-5a23a1d6688a",
+          "brand_name": "Desk",
+          "item_name": "슬림 데스크 800",
+          "discount_rate": 16,
+          "discount_price": 134400,
+          "price": 160000
+        }
       }
+    ],
+    "promotions": {
+      "title": "오늘의 특가",
+      "items": [
+        {
+          "id": "speaker-a",
+          "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/0fc9caf1-a86f-4f59-815f-9b84783d17be",
+          "item_name": "블루투스 미니 스피커",
+          "discount_rate": 16,
+          "discount_price": 134400,
+          "price": 160000
+        },
+        {
+          "id": "wooden-tray-a",
+          "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/264548a9-37dc-46c9-a062-437046db3c62",
+          "item_name": "악세서리 수납 우드 트레이",
+          "discount_rate": 16,
+          "discount_price": 134400,
+          "price": 160000
+        },
+        {
+          "id": "iphone-case",
+          "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/84ae14b7-61ea-4c7c-9bb8-cfb4c9a041df",
+          "item_name": "그라데이션 폰 케이스 (기종 선택 가능)",
+          "discount_rate": 16,
+          "discount_price": 134400,
+          "price": 160000
+        }
+      ]
     },
-    {
-      "id": "banner-02",
-      "background_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/e59b340e-4c34-4747-8790-4d1a8b579769",
-      "badge": {
-        "label": "기획전",
-        "background_color": "#967a6d"
-      },
-      "head_line": "나만의\n홈 오피스",
-      "product_detail": {
-        "id": "desk-s",
-        "thumbnail_image_url": "https://github.com/stopstone/kotlin-menu/assets/77120604/15818df9-28e8-4033-8102-5a23a1d6688a",
-        "brand_name": "Desk",
-        "item_name": "슬림 데스크 800",
-        "discount_rate": 16,
-        "discount_price": 134400,
-        "price": 160000
-      }
+    "recommendations": {
+      "title": "지석님을 위한\n추천 상품",
+      "categories": [
+        {
+          "id": "coffee",
+          "label": "따뜻한 커피 한 잔 어때요?",
+          "image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/bee75f42-77d1-451c-bb9b-b5cc1fc2a057",
+          "items": [
+            {
+              "id": "coffee-latte",
+              "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/f395a8ef-5a02-41ff-8dde-2df727777316",
+              "item_name": "블루커피 아이스 라떼 Tall Size",
+              "price": 160000
+            },
+            {
+              "id": "coffee-dark-roasting",
+              "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/dc43c99c-98b2-47d0-8719-b186c8fa9b32",
+              "item_name": "플레이스 다크 로스팅 원두 200g",
+              "price": 160000
+            },
+            {
+              "id": "coffee-americano",
+              "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/ebc1cd9d-9cbb-4ed0-8493-6390ef3f836c",
+              "item_name": "블루커피 아이스 아메리카노 Tall Size",
+              "price": 160000
+            },
+            {
+              "id": "coffee-tamper",
+              "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/d25408c2-9084-40fa-85b2-286bc47afe65",
+              "item_name": "바리스타 올스텐 탬퍼(53mm)",
+              "price": 160000
+            }
+          ]
+        },
+        {
+          "id": "speaker",
+          "label": "스피커와 함께 하는 겨울",
+          "image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/2a49d1ca-b0dc-44d3-9405-ae4827f8afb4",
+          "items": [
+            {
+              "id": "speaker-mini",
+              "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/50c638b2-c029-4a0d-92b5-56c5020f23e5",
+              "item_name": "방수 미니 블루투스 스피커 핑크",
+              "price": 160000
+            },
+            {
+              "id": "speaker-m-dre",
+              "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/d4d30af8-70e2-4248-9af9-4e016a20c927",
+              "item_name": "M-Dre 블루투스 헤드폰",
+              "discount_rate": 16,
+              "discount_price": 134400,
+              "price": 160000
+            },
+            {
+              "id": "speaker-wireless",
+              "thumbnail_image_url": "https://github.com/woowacourse-precourse/kotlin-racingcar-6/assets/77120604/e5d0e816-7227-4a13-b1f0-3eb845174bf0",
+              "item_name": "무선 블루투스 스피커 WB300",
+              "price": 160000
+            }
+          ]
+        }
+      ]
     }
-  ]
+  }
 }
+

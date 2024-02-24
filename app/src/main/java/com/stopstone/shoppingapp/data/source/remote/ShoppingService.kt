@@ -1,5 +1,6 @@
 package com.stopstone.shoppingapp.data.source.remote
 
+import com.stopstone.shoppingapp.data.model.HomeResponse
 import com.stopstone.shoppingapp.data.model.Product
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -9,6 +10,9 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ShoppingService {
+
+    @GET("home.json")
+    suspend fun getHomeData() : HomeResponse
 
     @GET("products/{id}.json")
     suspend fun getProduct(@Path("id") id: String): Product

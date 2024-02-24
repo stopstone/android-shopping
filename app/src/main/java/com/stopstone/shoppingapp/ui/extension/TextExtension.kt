@@ -6,7 +6,8 @@ import com.stopstone.shoppingapp.R
 import java.text.DecimalFormat
 
 
-fun TextView.applyNumberFormat(price: Int) {
+fun TextView.applyNumberFormat(price: Int?) {
+    price ?: return
     val decimalFormat = DecimalFormat("#,###")
     text = context.getString(R.string.format_price_unit, decimalFormat.format(price))
 }

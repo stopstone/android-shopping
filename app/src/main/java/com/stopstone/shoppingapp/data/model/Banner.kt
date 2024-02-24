@@ -20,10 +20,10 @@ data class Badge(
 @JsonClass(generateAdapter = true)
 data class ProductDetail(
     val id: String,
-    @Json(name = "brand_name") val brandName: String,
+    @Json(name = "brand_name") val brandName: String?,
     @Json(name = "item_name") val itemName: String,
-    @Json(name = "discount_rate") val discountRate: Int,
-    @Json(name = "discount_price") val discountPrice: Int,
+    @Json(name = "discount_rate") val discountRate: Int?,
+    @Json(name = "discount_price") val discountPrice: Int?,
     val price: Int,
     @Json(name = "thumbnail_image_url") val thumbnailImageUrl: String,
 )

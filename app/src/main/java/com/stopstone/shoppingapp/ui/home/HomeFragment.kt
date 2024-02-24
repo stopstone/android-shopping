@@ -1,24 +1,28 @@
 package com.stopstone.shoppingapp.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.stopstone.shoppingapp.R
 import com.stopstone.shoppingapp.data.source.asset.AssetLoader
 import com.stopstone.shoppingapp.data.source.HomeRepository
+import com.stopstone.shoppingapp.data.source.remote.ShoppingService
 import com.stopstone.shoppingapp.databinding.FragmentHomeBinding
 import com.stopstone.shoppingapp.ui.ProductClickListener
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment(), ProductClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var assetLoader: AssetLoader
-    private val repository: HomeRepository by lazy { HomeRepository(assetLoader) }
+    private val repository: HomeRepository by lazy { HomeRepository(ShoppingService.create()) }
     private val bannerAdapter = HomeBannerAdapter(this)
 
 
@@ -70,8 +74,9 @@ class HomeFragment : Fragment(), ProductClickListener {
 
 
     private fun loadData() {
-        repository.getBannerJsonData()?.let {
-            bannerAdapter.submitList(it.banners)
+        lifecycleScope.launch {
+            val homeData = repository.getBannerJsonData()
+            bannerAdapter.submitList(homeData.banners)
         }
     }
 
